@@ -1,0 +1,25 @@
+span {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 30px 20px;
+    margin: 5px;
+    font-size: 40px;
+}
+
+.emptySpan {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 55px 34px;
+    margin: 5px;
+    font-size: 40px;
+}
+
+.empty {
+    display: flex;
+    justify-content: center;
+}
+
+.full {
+    display: flex;
+    justify-content: center;
+}
