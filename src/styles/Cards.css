@@ -1,25 +1,57 @@
 span {
     border: 2px solid gray;
     border-radius: 5px;
-    padding: 30px 20px;
+    width: 70px;
+    height: 100px;
     margin: 5px;
     font-size: 40px;
-}
+    /*display: inherit;*/
 
-.emptySpan {
-    border: 2px solid gray;
-    border-radius: 5px;
-    padding: 55px 34px;
-    margin: 5px;
-    font-size: 40px;
-}
-
-.empty {
-    display: flex;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
 }
 
-.full {
+.word, .hand {
     display: flex;
+    justify-content: center;
+    border: 2px solid gray;
+    border-radius: 5px;
+    height: 115px;
+    margin: auto;
+}
+
+.button {
+    width: 100%;
+}
+
+button {
+    margin:auto;
+    display:inherit;
+    background-color: rgb(155, 214, 255);
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+span > * {
+    pointer-events:none;
+}
+
+span > div {
+    font-size: 20px;
+    margin-left: 5px;
+    width:100%;
+}
+
+span > p {
+    margin: auto;
+    text-align:center;
+}
+
+.emptySpan {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
 }

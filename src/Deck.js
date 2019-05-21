@@ -1,3 +1,34 @@
- const deck = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
- export default deck;
+export const deck = ['A','B','C','D','E', 'ER', 'F','G','H','I', 'IN','J','K','L','M','N','O','P','Q', 'QU', 'R','S','T', 'TH', 'U','V','W','X','Y','Z'];
+export const values = {
+ A: 2,
+ B: 0,
+ C: 0,
+ D: 5,
+ E: 2,
+ ER: 7,
+ F: 6,
+ G: 6,
+ H: 7,
+ I: 2,
+ IN: 7,
+ J: 6,
+ K: 0,
+ L: 0,
+ M: 5,
+ N: 5,
+ O: 4,
+ P: 0,
+ Q: 0,
+ QU: 15,
+ R: 5,
+ S: 4,
+ T: 3,
+ TH: 0,
+ U: 4,
+ V: 0,
+ W: 10,
+ X: 0,
+ Y: 0,
+ Z: 0
+};

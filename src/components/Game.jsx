@@ -2,14 +2,14 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Cards from './Cards';
 import Table from './Table';
-
+import '../styles/Game.css'
 
 export class Game extends React.Component {
     render() {
         return (
             <div>
-                {/*<Table />*/}
                 <Cards />
+
             </div>
 
         )
