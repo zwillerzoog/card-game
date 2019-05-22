@@ -10,9 +10,6 @@ export class Hand extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            hand: randomize(deck, this.props.round),
-            word: [],
-            discard: [],
             selected: ''
         };
         this.selectCard = this.selectCard.bind(this);
@@ -42,6 +39,19 @@ export class Hand extends React.Component {
         }
     }
 
+    newCard () {
+        console.log('hi')
+        console.log('this', this.props)
+        let newLetter = randomize(deck, 1)
+        let newArr = this.props.hand.slice();
+        let index = newArr.indexOf(this.state.selected);
+        newArr.push(newLetter);
+        this.setState({
+            selected: ''
+        })
+        this.props.dispatch(updateHand(newArr));
+        return newArr;
+    }
 
     addCard (e) {
         let newArr = this.props.word.slice();
@@ -58,7 +68,7 @@ export class Hand extends React.Component {
                      newArr.push(this.state.selected)
                 }
                  this.props.dispatch(updateWord(newArr));
-                this.setState({
+                 this.setState({
                     word: newArr,
                     selected: ''});
             }
@@ -92,7 +102,10 @@ export class Hand extends React.Component {
     render() {
         return (
             <div style={{width: "100%", marginTop: "20%"}}>
+
                 <h3>Hand:</h3>
+                <button onClick={e => this.newCard(e)}>Discard this letter and give me another please!</button>
+                <p>The more you use this, the less points you get</p>
                 <div className='hand' onClick={e => this.addCard(e)}>
                     { this.props.hand.map(i => {
                             return (
