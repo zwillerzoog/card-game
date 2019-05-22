@@ -10,7 +10,8 @@ export class Hand extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selected: ''
+            selected: '',
+            discardCount: 0
         };
         this.selectCard = this.selectCard.bind(this);
         this.submit = this.submit.bind(this);
@@ -40,17 +41,24 @@ export class Hand extends React.Component {
     }
 
     newCard () {
-        console.log('hi')
-        console.log('this', this.props)
-        let newLetter = randomize(deck, 1)
-        let newArr = this.props.hand.slice();
-        let index = newArr.indexOf(this.state.selected);
-        newArr.push(newLetter);
-        this.setState({
-            selected: ''
-        })
-        this.props.dispatch(updateHand(newArr));
-        return newArr;
+        if (this.state.selected === '') {
+            console.log('ya girl cheatin')
+        } else {
+            let newLetter = randomize(deck, 1)
+            let newArr = this.props.hand.slice();
+            let index = newArr.indexOf(this.state.selected);
+
+            newArr.push(newLetter);
+            this.setState({
+                selected: '',
+                discardCount: this.state.discardCount +1
+            });
+            console.log('discard count', this.state.discardCount)
+            this.props.dispatch(updateHand(newArr));
+
+            return newArr;
+        }
+
     }
 
     addCard (e) {
@@ -91,8 +99,8 @@ export class Hand extends React.Component {
                 word: [],
                 selected: ''
             });
-            console.log('before', this.props)
-            this.props.dispatch(submitScore(wordScore(this.props.word)));
+            console.log('before', this.props);
+            this.props.dispatch(submitScore(wordScore(this.props.word), this.state.discardCount));
             this.props.dispatch(updateHand(randomize(deck, this.props.round)));
             this.props.dispatch(updateWord(empty));
             this.props.dispatch(deal(this.props.round));

@@ -33,9 +33,9 @@ const reducers = (state = initialState, action) => {
                 hand:action.hand
             };
         case SCORE:
-            console.log('score', action.score)
+
             return {...state,
-                score: state.score + action.score
+                score: state.score + action.score - action.count
             };
         default:
             return state;

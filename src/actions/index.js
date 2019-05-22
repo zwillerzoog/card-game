@@ -19,7 +19,8 @@ export const updateHand = (hand) => ({
     hand
 });
 
-export const submitScore = (score) => ({
+export const submitScore = (score, count) => ({
     type:SCORE,
-    score
+    score,
+    count
 })
