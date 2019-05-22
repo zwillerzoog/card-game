@@ -5,7 +5,7 @@ import Router from './Router';
 class Layout extends React.Component {
     render() {
         return (
-            <div className = "container">
+            <div className = "container" >
                 <Navigation />
                 <Router />
             </div>

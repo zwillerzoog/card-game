@@ -1,7 +1,6 @@
 import {deck, values} from '../Deck';
-import {DEAL, WORD, SCORE} from '../actions'
-
-
+import {DEAL, WORD, HAND} from '../actions'
+import {randomize} from '../components/Logic'
 
 const wordScore = (array) => {
     let score = 0;
@@ -12,8 +11,7 @@ const wordScore = (array) => {
 }
 
 const initialState = {
-    wholeDeck: deck,
-    // hand:  randomize(deck, 3),
+    hand:  randomize(deck, 3),
     round: 3,
     word: [],
     score: 0,
@@ -24,13 +22,21 @@ const initialState = {
 const reducers = (state = initialState, action) => {
     switch (action.type) {
         case DEAL:
-            return {...state,
-                // hand: randomize(state.wholeDeck, state.round),
-                round: state.round + 1};
+            if (state.round < 8) {
+                return {...state,
+                    round: state.round + 1};
+            } else {
+                return {...state,
+                    round: 3};
+            }
         case WORD:
             return {...state,
                 word: action.word,
                 score: wordScore(action.word)
+            };
+        case HAND:
+            return {...state,
+                hand:action.hand
             };
         default:
             return state;

@@ -3,10 +3,11 @@ span {
     border-radius: 5px;
     width: 70px;
     height: 100px;
-    margin: 5px;
+    margin: 5px 10px;
     font-size: 40px;
     /*display: inherit;*/
-
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
@@ -20,6 +21,8 @@ span {
     border-radius: 5px;
     height: 115px;
     margin: auto;
+    padding:10px;
+    background-color: gray;
 }
 
 .button {
@@ -47,6 +50,7 @@ span > div {
 
 span > p {
     margin: auto;
+    margin-top:0;
     text-align:center;
 }
 
@@ -54,4 +58,20 @@ span > p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+button {
+    display:inline;
+    margin:0;
+    padding: 0px 4px;
+}
+
+.button {
+    display: flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.card {
+    display:flex;
 }

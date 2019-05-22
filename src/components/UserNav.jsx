@@ -18,7 +18,6 @@ const li = {
 
 class UserNav extends React.Component {
     render () {
-        console.log('props', this.props)
         return (
             <ul style={ul}>
                 <li style={li}><a style={li} href={'/'}>SCORE: {this.props.score}</a></li>
