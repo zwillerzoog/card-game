@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import '../styles/Cards.css'
-import {updateWord, updateHand, deal} from '../actions';
-import {randomize, arrayWithout, positionCard} from './Logic';
+import {updateWord, updateHand, deal, submitScore} from '../actions';
+import {randomize, arrayWithout, positionCard, wordScore} from './Logic';
 import {deck} from '../Deck';
 import Word from './Word'
 
@@ -73,6 +73,7 @@ export class Hand extends React.Component {
     }
 
     submit () {
+        let empty = [];
             this.setState({
                 hand: randomize(deck, this.props.round),
                 left: randomize(deck, this.props.round),
@@ -80,9 +81,12 @@ export class Hand extends React.Component {
                 word: [],
                 selected: ''
             });
-            // this.props.dispatch(updateWord(this.state.word));
+            console.log('before', this.props)
+            this.props.dispatch(submitScore(wordScore(this.props.word)));
+            this.props.dispatch(updateHand(randomize(deck, this.props.round)));
+            this.props.dispatch(updateWord(empty));
             this.props.dispatch(deal(this.props.round));
-
+            // console.log('after'. this.props)
     }
 
     render() {

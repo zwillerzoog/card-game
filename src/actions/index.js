@@ -17,4 +17,9 @@ export const updateWord = (word) => ({
 export const updateHand = (hand) => ({
     type: HAND,
     hand
+});
+
+export const submitScore = (score) => ({
+    type:SCORE,
+    score
 })

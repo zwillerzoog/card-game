@@ -1,3 +1,5 @@
+import {values} from "../Deck";
+
 export const randomize = (array, times) => {
     let newArr = [];
     let i = 0;
@@ -49,3 +51,12 @@ export const positionCard = (e) =>  {
         return finalCard
     }
 };
+
+export const wordScore = (array) => {
+    let score = 0;
+    array.map((a, b) => {
+        score = score + values[a];
+    });
+    console.log('score', score)
+    return score;
+}
