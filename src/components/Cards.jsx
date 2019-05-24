@@ -10,6 +10,12 @@ export class Cards extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.selectCard = this.selectCard.bind(this)
+        this.displayP = this.displayP.bind(this)
+        this.newCard = this.newCard.bind(this)
+        this.addCard = this.addCard.bind(this)
+        this.addSpace = this.addSpace.bind(this)
+        this.submit = this.submit.bind(this)
     }
 
     componentDidMount() {
@@ -53,6 +59,7 @@ export class Cards extends React.Component {
     }
 
     addCard (e) {
+        console.log(this.props.word, this.props.discardCount)
         let newArr = this.props.word.slice();
         if (this.props.selected) {
             if (e.target.className === 'word') {
@@ -84,6 +91,7 @@ export class Cards extends React.Component {
 
     submit () {
         let empty = [];
+        console.log(this.props.word, this.props.discardCount)
             this.props.dispatch(submitScore(wordScore(this.props.word), this.props.discardCount));
             this.props.dispatch(updateHand(randomize(deck, this.props.round)));
             this.props.dispatch(updateWord(empty));
