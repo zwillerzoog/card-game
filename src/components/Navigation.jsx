@@ -1,6 +1,7 @@
 import React from 'react';
 import MainNav from './MainNav';
 import UserNav from './UserNav'
+import './Navigation.css'
 
 const Navigation = () => {
 
@@ -12,10 +13,11 @@ const Navigation = () => {
         position: 'fixed',
         top: 0,
         left: 0,
-        right: 0
-    }
+        right: 0,
+        boxShadow: '2px 0px 10px 0px cornflowerblue'
+    };
     return (
-       <div style={style}>
+       <div className={"navbar"}>
            <MainNav/>
            <UserNav/>
        </div>

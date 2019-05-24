@@ -1,3 +1,14 @@
+* {
+    font-family: Arial;
+}
+h3 {
+    margin:0;
+    font-size: 22px;
+}
+p {
+    margin: 0;
+}
+
 span {
     border: 2px solid gray;
     border-radius: 5px;
@@ -14,19 +25,21 @@ span {
     justify-content: center;
 }
 
-.word, .hand {
-    display: flex;
-    justify-content: center;
-    border: 2px solid gray;
-    border-radius: 5px;
-    height: 115px;
-    margin: auto;
-    padding:10px;
-    background-color: gray;
-}
-
 .button {
     width: 100%;
+    display: flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.deleteButton {
+    margin-top: -50px;
+    font-size:10px;
+}
+
+.selectedDisplay {
+
+    text-align: center;
 }
 
 button {
@@ -35,7 +48,28 @@ button {
     background-color: rgb(155, 214, 255);
     border-radius: 5px;
     font-size: 20px;
-    margin-top: 30px;
+    padding: 5px;
+    border: 0;
+    display:inline;
+    margin:0;
+    box-shadow: -1px 1px 2px 0px cornflowerblue;
+    margin: 5px 0;
+    padding: 5px 5px;
+}
+
+.word, .hand {
+    display: flex;
+    justify-content: center;
+    border: 2px solid #686f73;;
+    border-radius: 5px;
+    height: 115px;
+    margin: 10px 0;
+    padding:10px;
+    background-color: #686f73;;
+}
+
+.word {
+    padding:20px
 }
 
 span > * {
@@ -60,18 +94,13 @@ span > p {
     justify-content: center;
 }
 
-button {
-    display:inline;
-    margin:0;
-    padding: 0px 4px;
-}
-
-.button {
-    display: flex;
-    flex-direction:column;
-    flex:1;
-}
-
 .card {
     display:flex;
+}
+
+.submit {
+    margin: 0 40% 0 40%;
+    width: 20%;
+    padding: 5px;
+    font-size: 2.2vw;
 }

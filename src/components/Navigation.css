@@ -1,0 +1,43 @@
+.navbar {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    background-color:#9bd6ff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 2px 0px 10px 0px cornflowerblue;
+    height: 50px;
+}
+
+
+ul {
+    list-style: none;
+    display: flex;
+    position: fixed;
+    justify-content: space-evenly;
+    width: 20%;
+}
+
+.mainNav {
+    left: 0
+}
+
+.userNav {
+    right: 0
+}
+
+li {
+    margin-left:3%;
+    margin-right:3%;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-shadow: -2px 2px 3px #3b588c;
+}

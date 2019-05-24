@@ -21,9 +21,9 @@ const li = {
 
 const MainNav = () => {
     return (
-        <ul style={{listStyle: "none", display: "flex"}}>
-            <li style={li}><a style={li} href={'/'}>Home</a></li>
-            <li style={li}><a style={li} href={'/'}>Play</a></li>
+        <ul className='mainNav' >
+            <li ><a href={'/'}>Home</a></li>
+            <li ><a href={'/'}>Play</a></li>
         </ul>
     )
 };

@@ -21,11 +21,13 @@ export const arrayWithout = (array, i) => {
     return array;
 };
 
+
 export const positionCard = (e) =>  {
     let middleOfLast;
     let obj = e.target.childNodes;
     let finalCard;
     if (e.target.childNodes[0]) {
+
         for (let key in obj) {
             if (obj[key].childNodes) {
                 let middle = obj[key].offsetWidth/2 + obj[key].offsetLeft;
@@ -57,6 +59,5 @@ export const wordScore = (array) => {
     array.map((a, b) => {
         score = score + values[a];
     });
-    console.log('score', score)
     return score;
-}
+};
