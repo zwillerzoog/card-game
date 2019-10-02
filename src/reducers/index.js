@@ -55,4 +55,15 @@ const reducers = (state = initialState, action) => {
     }
 };
 
+// const reducer = (state = initialState, action) => {
+//     switch (action.type) {
+//         case ACTION:
+//             return {...state,
+//                 count: state.count + 1
+//             };
+//         default:
+//             return state;
+//     }
+// };
+
 export default reducers;

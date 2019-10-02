@@ -11,10 +11,10 @@ export const deal = (round) => ({
     round
 });
 
-export const updateWord = (word) => ({
+export const updateWord = (word, score) => ({
     type: WORD,
     word,
-    score: SCORE
+    score
 });
 
 export const updateHand = (hand) => ({

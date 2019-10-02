@@ -6,7 +6,9 @@
 .pnp.js
 
 # testing
-/coverage
+/coverage/
+/frontend/output/*
+frontend/.scannerwork/*
 
 # production
 /build
